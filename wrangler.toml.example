@@ -1,0 +1,39 @@
+name = "toggl-report-bot"
+main = "src/index.js"
+compatibility_date = "2022-12-16"
+
+[triggers]
+crons = ["0 1 15 * *","0 1 L * *"]
+
+[vars]
+# ID for your Toggl Workspace
+WORKSPACE_IDENTIFIER = "1234567"
+
+# Toggle email and password for auth 
+TOGGL_AUTH = "email:password"
+
+# hourly rate to use in calculations
+HOURLY_RATE = "100"
+
+# your name/company name
+YOUR_NAME = "John Doe"
+
+# your phone number
+YOUR_PHONE = "123-456-7890"
+
+# your email
+YOUR_EMAIL = "your@example.com"
+
+# your address
+YOUR_ADDRESS = "145 5th Avenue, New York, NY 00010"
+
+# client name
+CLIENT_NAME = "Acme Inc."
+
+# where can your worker be reached?
+INVOICE_URL = "invoices.example.com"
+
+# mailgun configuration
+MAIL_BASE_URL = "https://api.mailgun.net/v3/mailgun.example.com"
+MAIL_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+FROM_EMAIL = "invoices@example.com"
