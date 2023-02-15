@@ -175,9 +175,9 @@ export default {
 		let lastDayOfMonth = new Date(today.getFullYear(), today.getMonth() + 1, 0).getDate();
 		if (today.getDate() <= 17) {
 			startDate = new Date(today.getFullYear(), today.getMonth(), 1);
-			endDate = new Date(today.getFullYear(), today.getMonth(), 15);
+			endDate = new Date(today.getFullYear(), today.getMonth(), 14);
 		} else if (today.getDate() > 17 && today.getDate() <= lastDayOfMonth) {
-			startDate = new Date(today.getFullYear(), today.getMonth(), 16);
+			startDate = new Date(today.getFullYear(), today.getMonth(), 15);
 			// determine the last day of the month
 			endDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
 		} else {
