@@ -179,9 +179,9 @@ export default {
 			endDate = new Date(today.getFullYear(), today.getMonth(), 14, 23, 59, 59);
 		} else if (today.getDate() > 17 && today.getDate() <= lastDayOfMonth) {
 			// from 15th at midnight to last day of the month at 11:59:59
-			startDate = new Date(today.getFullYear(), today.getMonth(), 15);
+			startDate = new Date(today.getFullYear(), today.getMonth(), 14);
 			// determine the last day of the month
-			endDate = new Date(today.getFullYear(), today.getMonth() + 1, 0);
+			endDate = new Date(today.getFullYear(), today.getMonth() + 1, 0, 23, 59, 59);
 		} else {
 			return new Response('Error: Invalid date');
 		}
