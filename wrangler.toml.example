@@ -1,6 +1,6 @@
 name = "toggl-report-bot"
 main = "src/index.js"
-compatibility_date = "2022-12-16"
+compatibility_date = "2023-9-8"
 
 [triggers]
 crons = ["0 1 15 * *","0 1 L * *"]
@@ -14,6 +14,10 @@ TOGGL_AUTH = "email:password"
 
 # hourly rate to use in calculations
 HOURLY_RATE = "100"
+
+# Advanced Rate
+ADVANCED_RATE = "200"
+ADVANCED_TAG_ID = "00000000"
 
 # your name/company name
 YOUR_NAME = "John Doe"
@@ -33,7 +37,6 @@ CLIENT_NAME = "Acme Inc."
 # where can your worker be reached?
 INVOICE_URL = "invoices.example.com"
 
-# mailgun configuration
-MAIL_BASE_URL = "https://api.mailgun.net/v3/mailgun.example.com"
-MAIL_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+# mailchannels configuration
 FROM_EMAIL = "invoices@example.com"
+TO_EMAIL = "you@example.com"
