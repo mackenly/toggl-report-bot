@@ -1,6 +1,6 @@
 name = "toggl-report-bot"
 main = "src/index.js"
-compatibility_date = "2023-9-8"
+compatibility_date = "2023-10-17"
 
 [triggers]
 crons = ["0 1 15 * *","0 1 L * *"]
@@ -37,6 +37,7 @@ CLIENT_NAME = "Acme Inc."
 # where can your worker be reached?
 INVOICE_URL = "invoices.example.com"
 
-# mailchannels configuration
+# mailgun configuration
+MAIL_BASE_URL = "https://api.mailgun.net/v3/mailgun.example.com"
+MAIL_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 FROM_EMAIL = "invoices@example.com"
-TO_EMAIL = "you@example.com"
