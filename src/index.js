@@ -110,6 +110,9 @@ export default {
 			regularTotals = [],
 			advancedTotals = [];
 		timeEntries.forEach((item) => {
+			if ((env.PROJECT_ID && env.PROJECT_ID.length > 0 && item.project_id != env.PROJECT_ID)) {
+				return;
+			}
 			if (item.advanced) {
 				let index = advancedTotals.findIndex((x) => x.project_id === item.project_id);
 				if (index === -1) {
@@ -210,8 +213,8 @@ export default {
 			endDate.getMonth() + 1
 		}/${endDate.getDate()}/${endDate.getFullYear()}</title></head><body> <style> 
 body { font-family: Arial, Helvetica, sans-serif; font-size: 12px; max-width: 1080px; margin: 20px auto; } header { margin-bottom: 20px; } #meta { display: flex; justify-content: space-between; } h1 { font-size: 35px; margin-bottom: 10px; } p { margin: 0; } table { border-collapse: collapse; width: 100%; } th, td { border: 1px solid #ddd; padding: 8px; } tr:nth-child(even) { background-color: #f2f2f2; } tr:hover { background-color: #ddd; } 
-th { padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #4CAF50; color: white; } #totals { margin-top: 20px; font-size: 16px; max-width: fit-content; margin-left: auto; padding: 10px; border: 1px solid rgb(192, 192, 192); } #totals p { margin: 5px 0; display: flex; justify-content: space-between; } #totals p span { margin-left: 20px; } section { margin-top: 20px; } #options {position: fixed;bottom: 10px;left: 50%;transform: translateX(-50%);height: 30px;display: flex;justify-content: space-between;align-items: center;gap: 10px;padding: 15px;border-radius: 50px;background-color: #4CAF50;} #options button,#options a {padding: 10px;border-radius: 5px;text-decoration: none;border: 0px solid transparent;background-color: transparent;color: #4CAF50;font-size: 16px;cursor: pointer;} #options svg { fill: #fff; padding-top: 5px;border: 2px solid transparent; } #options button:hover svg,#options button:active svg,#options a:hover svg,#options a:active svg {box-shadow: 0 0 50px 2px #fff;border-radius: 18px;background-color: rgba(255, 255, 255, 0.278);} footer { margin-top: 20px; } /* print styles */ 
-@media print { a {  color: #000 !important;  text-decoration: none !important; } } </style> <header> <h1>${env.YOUR_NAME} ${
+th { padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #4CAF50; color: white; } #totals { margin-top: 20px; font-size: 16px; max-width: fit-content; margin-left: auto; padding: 10px; border: 1px solid rgb(192, 192, 192); } #totals p { margin: 5px 0; display: flex; justify-content: space-between; } #totals p span { margin-left: 20px; } section { margin-top: 20px; } #options {position: fixed;bottom: 10px;left: 50%;transform: translateX(-50%);height: 30px;display: flex;justify-content: space-between;align-items: center;gap: 10px;padding: 15px;border-radius: 50px;background-color: #4CAF50;} #options button,#options a {padding: 10px;border-radius: 5px;text-decoration: none;border: 0px solid transparent;background-color: transparent;color: #4CAF50;font-size: 16px;cursor: pointer;} #options svg { fill: #fff; padding-top: 5px;border: 2px solid transparent; } #options button:active svg,#options a:active svg {box-shadow: 0 0 50px 2px #fff;border-radius: 18px;background-color: rgba(255, 255, 255, 0.278);} footer { margin-top: 20px; } /* print styles */ 
+@media print { a {  color: #000 !important;  text-decoration: none !important; } } @media print { #options {display: none;} } </style><header> <h1>${env.YOUR_NAME} ${
 			env.CLIENT_NAME
 		} Invoice</h1> <div id='meta'> <div>  <p>  <b>Client: </b> <span>${
 			env.CLIENT_NAME
