@@ -9,6 +9,9 @@ crons = ["0 1 15 * *","0 1 L * *"]
 # ID for your Toggl Workspace
 WORKSPACE_IDENTIFIER = "1234567"
 
+# ID for your Toggl Project (optional) (if you want to filter by project)
+PROJECT_ID = "123456789"
+
 # Toggle email and password for auth 
 TOGGL_AUTH = "email:password"
 
