@@ -2,7 +2,7 @@
   "name": "toggl-report-bot",
   "version": "0.0.0",
   "devDependencies": {
-    "wrangler": "3.107.3"
+    "wrangler": "3.109.1"
   },
   "private": true,
   "scripts": {
